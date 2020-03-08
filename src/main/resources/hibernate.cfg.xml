@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">hwjxnzwvcrqgur</property>
+        <property name="hibernate.connection.password">
+            47409bd637b7ae05b8f5c4ce72a4aa3b205a72c85e224bab6e50cf90665e54e3
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/dfk7lavpqpdhgs?sslmode=require
+        </property>
+
+        <property name="current_session_context_class">thread</property>
+        <property name="connection_pool_size">1</property>
+        <property name="ddl.auto">create</property>
+        <property name="show_sql">true</property>
+
+        <mapping class="model.Solution"/>
+        <mapping class="model.Users"/>
+        <mapping class="model.Assignment"/>
+        <mapping class="model.Report"/>
+        <mapping class="model.Task"/>
+        <mapping class="model.Answer"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,41 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="persistenceUnitName" transaction-type="RESOURCE_LOCAL">
+
+        <class>model.Solution</class>
+        <class>model.Users</class>
+        <class>model.Assignment</class>
+        <class>model.Report</class>
+        <class>model.Task</class>
+        <class>model.Answer</class>
+
+        <properties>
+
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/> <!-- DB Driver -->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:postgresql://ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/dfk7lavpqpdhgs?dbname?username=hwjxnzwvcrqgur&amp;password=47409bd637b7ae05b8f5c4ce72a4aa3b205a72c85e224bab6e50cf90665e54e3&amp;ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"/><!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="hwjxnzwvcrqgur"/> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password"
+                      value="47409bd637b7ae05b8f5c4ce72a4aa3b205a72c85e224bab6e50cf90665e54e3"/> <!-- DB Password -->
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- create / create-drop / update -->
+
+            <property name="hibernate.show_sql" value="true"/> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true"/> <!-- Show SQL formatted -->
+
+
+            <property name="org.hibernate.c3p0.internal.C3P0ConnectionProvider" value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider" />
+            <property name="hibernate.c3p0.acquire_increment" value="1" />
+            <property name="hibernate.c3p0.idle_test_period" value="3000" />
+            <property name="hibernate.c3p0.timeout" value="1800" />
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
